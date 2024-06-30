@@ -4,6 +4,7 @@ RUN apt-get update -qq \
     && apt-get install -y --no-install-recommends \
       ca-certificates \
       git \
+      unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
@@ -13,7 +14,6 @@ RUN apt-get update -qq \
     && apt-get install -y --no-install-recommends \
       curl \
       jq \
-      unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
