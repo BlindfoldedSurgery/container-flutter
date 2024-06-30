@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "container-flutter"
+description = "Container images containing Flutter"
+version = "1.0.0"
+authors = ["BlindfoldedSurgery <team@blindfolded.surgery>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "~3.12"
+commitizen = "^3.12.0"
+pre-commit = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.commitizen]
+version_provider = "poetry"
+version_scheme = "semver"
+tag_format = "v$major.$minor.$patch"
+changelog_incremental = true
+update_changelog_on_bump = true
