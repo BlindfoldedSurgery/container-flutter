@@ -18,7 +18,7 @@ jobs:
         platform: ["arm64", "amd64"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v3
     with:
-      runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-latest' }}
+      runner-name-build: ${{ (matrix.platform == 'arm64') && 'warp-ubuntu-latest-arm64-2x' || 'ubuntu-latest' }}
       additional-build-args: |
         FLUTTER_VERSION=${{ matrix.flutter-version }}
       image-name: flutter
@@ -40,7 +40,7 @@ jobs:
         platform: ["arm64", "amd64"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v3
     with:
-      runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-latest' }}
+      runner-name-build: ${{ (matrix.platform == 'arm64') && 'warp-ubuntu-latest-arm64-2x' || 'ubuntu-latest' }}
       digest-artifact-name: digests-${{ matrix.flutter-version }}
       additional-build-args: |
         FLUTTER_VERSION=${{ matrix.flutter-version }}
