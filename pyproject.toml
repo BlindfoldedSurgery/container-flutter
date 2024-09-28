@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "container-flutter"
 description = "Container images containing Flutter"
-version = "1.1.0"
+version = "1.2.0"
 authors = ["BlindfoldedSurgery <team@blindfolded.surgery>"]
 license = "MIT"
 readme = "README.md"
