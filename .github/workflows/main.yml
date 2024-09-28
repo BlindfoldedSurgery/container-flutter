@@ -14,7 +14,7 @@ jobs:
     if: github.event_name == 'pull_request'
     strategy:
       matrix:
-        flutter-version: ["3.16", "3.19", "3.22"]
+        flutter-version: ["3.16", "3.19", "3.22", "3.24"]
         platform: ["arm64", "amd64"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v3
     with:
@@ -36,7 +36,7 @@ jobs:
     needs: bump
     strategy:
       matrix:
-        flutter-version: ["3.16", "3.19", "3.22"]
+        flutter-version: ["3.16", "3.19", "3.22", "3.24"]
         platform: ["arm64", "amd64"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v3
     with:
@@ -55,7 +55,7 @@ jobs:
       - push-container-images
     strategy:
       matrix:
-        flutter-version: ["3.16", "3.19", "3.22"]
+        flutter-version: ["3.16", "3.19", "3.22", "3.24"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/merge-manifests.yml@v3
     with:
       image-name: flutter
