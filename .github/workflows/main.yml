@@ -16,7 +16,7 @@ jobs:
       matrix:
         flutter-version: ["3.16", "3.19", "3.22", "3.24"]
         platform: ["arm64", "amd64"]
-    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v3
+    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v4
     with:
       runner-name-build: ${{ (matrix.platform == 'arm64') && 'warp-ubuntu-latest-arm64-2x' || 'ubuntu-latest' }}
       additional-build-args: |
@@ -38,7 +38,7 @@ jobs:
       matrix:
         flutter-version: ["3.16", "3.19", "3.22", "3.24"]
         platform: ["arm64", "amd64"]
-    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v3
+    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v4
     with:
       runner-name-build: ${{ (matrix.platform == 'arm64') && 'warp-ubuntu-latest-arm64-2x' || 'ubuntu-latest' }}
       digest-artifact-name: digests-${{ matrix.flutter-version }}
@@ -56,7 +56,7 @@ jobs:
     strategy:
       matrix:
         flutter-version: ["3.16", "3.19", "3.22", "3.24"]
-    uses: BlindfoldedSurgery/actions-container/.github/workflows/merge-manifests.yml@v3
+    uses: BlindfoldedSurgery/actions-container/.github/workflows/merge-manifests.yml@v4
     with:
       image-name: flutter
       tag: ${{ needs.bump.outputs.version }}-${{ matrix.flutter-version }}
