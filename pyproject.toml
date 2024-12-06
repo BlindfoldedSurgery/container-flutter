@@ -1,23 +1,24 @@
-[tool.poetry]
+[project]
 name = "container-flutter"
 description = "Container images containing Flutter"
 version = "1.2.1"
-authors = ["BlindfoldedSurgery <team@blindfolded.surgery>"]
-license = "MIT"
+authors = [
+    { email = "team@blindfolded.surgery", name = "BlindfoldedSurgery" }
+]
+classifiers = [
+    "Private :: Do Not Upload",
+    "License :: OSI Approved :: MIT License",
+]
 readme = "README.md"
-package-mode = false
+requires-python = "==3.13.*"
 
-[tool.poetry.dependencies]
-python = "~3.13"
-commitizen = "4.1.0"
-pre-commit = "^4.0.0"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+dependencies = [
+    "commitizen ==4.1.0",
+    "pre-commit >=4.0.0, <5.0.0",
+]
 
 [tool.commitizen]
-version_provider = "poetry"
+version_provider = "pep621"
 version_scheme = "semver"
 tag_format = "v$major.$minor.$patch"
 changelog_incremental = true
