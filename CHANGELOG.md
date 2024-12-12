@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.1.0 (2024-12-12)
+
+### Feat
+
+- Run flutter doctor during build
+- Make image usable as root
+
 ## v2.0.0 (2024-12-12)
 
 ### Feat
