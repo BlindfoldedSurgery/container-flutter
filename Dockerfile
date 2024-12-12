@@ -45,3 +45,5 @@ ENV PATH=${PATH}:/opt/flutter/bin
 
 USER app
 WORKDIR /app
+
+RUN flutter doctor --suppress-analytics
