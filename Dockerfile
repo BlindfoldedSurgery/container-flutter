@@ -39,6 +39,7 @@ LABEL org.opencontainers.image.version=$APP_VERSION
 RUN groupadd --system --gid 500 app
 RUN useradd --system --uid 500 --gid app --create-home --home-dir /app -s /bin/bash app
 
+RUN git config --system --add safe.directory /opt/flutter
 COPY --from=downloader --chown=app /download/flutter /opt/flutter
 ENV PATH=${PATH}:/opt/flutter/bin
 
