@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.0.0 (2024-12-12)
+
+### Feat
+
+- Add support for Flutter 3.27
+
+
+- Drop support for Flutter 3.16
+
 ## v1.2.1 (2024-10-06)
 
 ### Fix
