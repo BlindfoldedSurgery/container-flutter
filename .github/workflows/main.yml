@@ -18,14 +18,19 @@ jobs:
     strategy:
       matrix:
         flutter-version: ["3.19", "3.22", "3.24", "3.27"]
-        platform: ["arm64", "amd64"]
-    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v7
+    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-dual-image-kaniko.yml@v7
     with:
-      runner-name-build: ${{ (matrix.platform == 'arm64') && 'warp-ubuntu-2404-arm64-2x' || 'ubuntu-24.04' }}
       additional-build-args: |
         FLUTTER_VERSION=${{ matrix.flutter-version }}
       image-name: flutter
       push-image: false
+
+  post-build-container-image:
+    runs-on: ubuntu-24.04
+    if: github.event_name == 'pull_request'
+    needs: build-container-image
+    steps:
+      - run: echo "All images built"
 
   bump:
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v4
@@ -41,27 +46,10 @@ jobs:
     strategy:
       matrix:
         flutter-version: ["3.19", "3.22", "3.24", "3.27"]
-        platform: ["arm64", "amd64"]
-    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-kaniko.yml@v7
+    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-dual-image-kaniko.yml@v7
     with:
-      runner-name-build: ${{ (matrix.platform == 'arm64') && 'warp-ubuntu-2404-arm64-2x' || 'ubuntu-24.04' }}
-      digest-artifact-name: digests-${{ matrix.flutter-version }}
       additional-build-args: |
         FLUTTER_VERSION=${{ matrix.flutter-version }}
       image-name: flutter
       push-image: true
       version: ${{ needs.bump.outputs.version }}-${{ matrix.flutter-version }}
-      tag-suffix: -${{ matrix.platform }}
-
-  merge-container-images:
-    needs:
-      - bump
-      - push-container-images
-    strategy:
-      matrix:
-        flutter-version: ["3.19", "3.22", "3.24", "3.27"]
-    uses: BlindfoldedSurgery/actions-container/.github/workflows/merge-manifests.yml@v7
-    with:
-      image-name: flutter
-      tag: ${{ needs.bump.outputs.version }}-${{ matrix.flutter-version }}
-      variant-digests: digests-${{ matrix.flutter-version }}
