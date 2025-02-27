@@ -17,7 +17,7 @@ jobs:
     if: github.event_name == 'pull_request'
     strategy:
       matrix:
-        flutter-version: ["3.19", "3.22", "3.24", "3.27"]
+        flutter-version: ["3.19", "3.22", "3.24", "3.27", "3.29"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-dual-image-kaniko.yml@v7
     with:
       additional-build-args: |
@@ -45,7 +45,7 @@ jobs:
     needs: bump
     strategy:
       matrix:
-        flutter-version: ["3.19", "3.22", "3.24", "3.27"]
+        flutter-version: ["3.19", "3.22", "3.24", "3.27", "3.29"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-dual-image-kaniko.yml@v7
     with:
       additional-build-args: |
