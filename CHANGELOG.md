@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.0 (2025-03-07)
+
+### Feat
+
+- support Flutter 3.29
+
 ## v2.1.0 (2024-12-12)
 
 ### Feat
