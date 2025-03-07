@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.0 (2025-03-07)
+
+### BREAKING CHANGE
+
+- support for Flutter 3.19 (released on 2024-02-15) was dropped from this release
+
 ## v2.2.0 (2025-03-07)
 
 ### Feat
