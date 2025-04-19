@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.1.0 (2025-04-19)
+
+### Feat
+
+- add git-lfs to image
+
 ## v3.0.0 (2025-03-07)
 
 ### BREAKING CHANGE
