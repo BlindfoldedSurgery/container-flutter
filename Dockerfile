@@ -4,6 +4,7 @@ RUN apt-get update -qq \
     && apt-get install -y --no-install-recommends \
       ca-certificates \
       git \
+      git-lfs \
       unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives
