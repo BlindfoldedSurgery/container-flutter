@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim AS base
+FROM public.ecr.aws/docker/library/debian:bookworm-slim AS base
 
 RUN apt-get update -qq \
     && apt-get install -y --no-install-recommends \
