@@ -1,5 +1,15 @@
 # Changelog
 
+## v3.2.0 (2025-05-27)
+
+### Feat
+
+- add support for Flutter 3.32
+
+### Fix
+
+- drop support for Flutter 3.22 after one year
+
 ## v3.1.0 (2025-04-19)
 
 ### Feat
