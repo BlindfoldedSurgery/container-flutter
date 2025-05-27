@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flutter-version: ["3.22", "3.24", "3.27", "3.29", "3.32"]
+        flutter-version: ["3.24", "3.27", "3.29", "3.32"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-dual-image-buildah.yml@v7
     with:
       additional-build-args: |
@@ -47,7 +47,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flutter-version: ["3.22", "3.24", "3.27", "3.29", "3.32"]
+        flutter-version: ["3.24", "3.27", "3.29", "3.32"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-dual-image-buildah.yml@v7
     with:
       additional-build-args: |
