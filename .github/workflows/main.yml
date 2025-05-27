@@ -16,6 +16,7 @@ jobs:
   build-container-image:
     if: github.event_name == 'pull_request'
     strategy:
+      fail-fast: false
       matrix:
         flutter-version: ["3.22", "3.24", "3.27", "3.29", "3.32"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-dual-image-buildah.yml@v7
@@ -44,6 +45,7 @@ jobs:
     if: needs.bump.outputs.bumped == 'true' && github.ref_name == github.event.repository.default_branch
     needs: bump
     strategy:
+      fail-fast: false
       matrix:
         flutter-version: ["3.22", "3.24", "3.27", "3.29", "3.32"]
     uses: BlindfoldedSurgery/actions-container/.github/workflows/build-dual-image-buildah.yml@v7
