@@ -1,5 +1,14 @@
 # Changelog
 
+## v4.0.0 (2025-09-05)
+
+### Feat
+
+- add support for Flutter 3.35
+
+
+- drop support for Flutter 3.24
+
 ## v3.2.0 (2025-05-27)
 
 ### Feat
